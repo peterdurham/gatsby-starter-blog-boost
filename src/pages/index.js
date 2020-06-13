@@ -36,11 +36,15 @@ const IndexPage = () => {
       <SEO title="Home" />
       <h2>Articles</h2>
       <Featured markdown={data.allMarkdownRemark} />
-      {/* <div>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Card key={node.id} frontmatter={node.frontmatter} />
-        ))}
-      </div> */}
+      <div className="cards-layout">
+        {data.allMarkdownRemark.edges.map(({ node }, index) => {
+          if (index < 3) {
+            return null
+          } else {
+            return <Card key={node.id} frontmatter={node.frontmatter} />
+          }
+        })}
+      </div>
       <Link to="/page-2/">Go to page 2</Link> <br />
     </Layout>
   )

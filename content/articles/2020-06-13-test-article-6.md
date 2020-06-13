@@ -1,6 +1,7 @@
 ---
 templateKey: blog-post
-title: Test article 6
+title: Pellentesque pulvinar pellentesque habitant morbi tristique senectus et
+  netus et.
 slug: test-article-6
 date: 2020-06-13T18:12:11.233Z
 dateModified: 2020-06-13T18:12:11.616Z

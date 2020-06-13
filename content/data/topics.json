@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Playstation",
+    "slug": "playstation",
+    "image": "../assets/topics/javascriptlogo.png"
+  },
+  {
+    "name": "Nintendo",
+    "slug": "nintendo",
+    "image": "../assets/topics/css-logo.png"
+  },
+  {
+    "name": "Xbox",
+    "slug": "xbox",
+    "image": "../assets/topics/react-logo2.png"
+  },
+  {
+    "name": "PC",
+    "slug": "pc",
+    "image": "../assets/topics/node-logo.png"
+  }
+]

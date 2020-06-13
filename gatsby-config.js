@@ -6,16 +6,50 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/static/images`,
         name: `images`,
-        path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./content/data`,
+        name: `topic`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/articles`,
+        name: `articles`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

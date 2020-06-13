@@ -8,8 +8,8 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/images
+public_folder: /images
 
 collections:
   - name: "article"
@@ -26,11 +26,11 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Date Published", name: "datePublished", widget: "datetime" }
+      - { label: "Date Published", name: "date", widget: "datetime" }
       - { label: "Date Modified", name: "dateModified", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
+      - { label: "Featured Post", name: "featuredPost", widget: "boolean" }
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Featured Image", name: "featuredImage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }

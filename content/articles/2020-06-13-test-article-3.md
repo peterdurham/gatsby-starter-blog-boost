@@ -5,11 +5,12 @@ slug: test-article-3
 datePublished: 2020-06-13T16:23:59.478Z
 dateModified: 2020-06-13T16:23:59.501Z
 description: test
-featuredpost: false
+featuredPost: false
 category: Xbox
 tags:
   - Xbox
   - Test
-featuredimage: /img/ruin.jpg
+featuredImage: /img/lines.jpg
 ---
+
 great fun

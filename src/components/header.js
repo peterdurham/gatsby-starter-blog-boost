@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => {
   `)
 
   return (
-    <header>
+    <header id="nav-header">
       <div className="container">
         <Link
           to="/"

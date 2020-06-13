@@ -1,22 +1,22 @@
 [
   {
-    "name": "Playstation",
-    "slug": "playstation",
-    "image": "../assets/topics/javascriptlogo.png"
+    "name": "Topic 1",
+    "slug": "topic-1",
+    "image": "/static/img/exampletopiclogo.jpg"
   },
   {
-    "name": "Nintendo",
-    "slug": "nintendo",
-    "image": "../assets/topics/css-logo.png"
+    "name": "Topic 2",
+    "slug": "topic-2",
+    "image": "/static/img/exampletopiclogo.jpg"
   },
   {
-    "name": "Xbox",
-    "slug": "xbox",
-    "image": "../assets/topics/react-logo2.png"
+    "name": "Topic 3",
+    "slug": "topic-3",
+    "image": "/static/img/exampletopiclogo.jpg"
   },
   {
-    "name": "PC",
-    "slug": "pc",
-    "image": "../assets/topics/node-logo.png"
+    "name": "Topic 4",
+    "slug": "topic-4",
+    "image": "/static/img/exampletopiclogo.jpg"
   }
 ]

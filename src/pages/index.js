@@ -14,12 +14,15 @@ const IndexPage = () => {
         edges {
           node {
             id
+            fields {
+              slug
+            }
             frontmatter {
               title
               category
               featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 400) {
+                  fluid(maxWidth: 600) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -34,16 +37,42 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h2>Articles</h2>
       <Featured markdown={data.allMarkdownRemark} />
-      <div className="cards-layout">
-        {data.allMarkdownRemark.edges.map(({ node }, index) => {
-          if (index < 3) {
-            return null
-          } else {
-            return <Card key={node.id} frontmatter={node.frontmatter} />
-          }
-        })}
+      <div className="two-column-layout">
+        <div className="cards-layout">
+          <h2 id="articles-title">Articles</h2>
+          {data.allMarkdownRemark.edges.map(({ node }, index) => {
+            if (index < 3) {
+              return null
+            } else {
+              return (
+                <Card
+                  key={node.id}
+                  slug={node.fields.slug}
+                  frontmatter={node.frontmatter}
+                />
+              )
+            }
+          })}
+        </div>
+        <div className="sidebar">
+          <h2 className="sidebar-header">Mailing List</h2>
+          <div className="sidebar-emails">
+            <h2>Specialized header here</h2>
+            <p>Subscribe to my list for lots of great reasons</p>
+            <form>
+              <input type="text" id="email" />
+              <input type="submit" value="Subscribe" />
+            </form>
+            <span>Weekly updates</span>
+          </div>
+          <h2 className="sidebar-header">Popular Articles</h2>
+          <div className="sidebar-popular">
+            <div>Sidebar card</div>
+            <div>Sidebar card</div>
+            <div>Sidebar card</div>
+          </div>
+        </div>
       </div>
       <Link to="/page-2/">Go to page 2</Link> <br />
     </Layout>

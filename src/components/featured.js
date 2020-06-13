@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Image from "gatsby-image"
 
 const Featured = ({ markdown }) => {
@@ -10,28 +11,33 @@ const Featured = ({ markdown }) => {
     return (
       <div id="featured-styles">
         {markdown.edges.map(({ node }, index) => {
+          console.log(node)
           if (index === 0) {
             return (
               <figure id="featured-main">
-                <Image
-                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                />
-                <figcaption>
-                  <h2>{node.frontmatter.title}</h2>
-                  <span>{node.frontmatter.category}</span>
-                </figcaption>
+                <Link to={node.fields.slug}>
+                  <Image
+                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                  />
+                  <figcaption>
+                    <h2>{node.frontmatter.title}</h2>
+                    <span>{node.frontmatter.category}</span>
+                  </figcaption>
+                </Link>
               </figure>
             )
           } else if (index < 3) {
             return (
               <figure className="featured-secondary">
-                <Image
-                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                />
-                <figcaption>
-                  <h2>{node.frontmatter.title}</h2>
-                  <span>{node.frontmatter.category}</span>
-                </figcaption>
+                <Link to={node.fields.slug}>
+                  <Image
+                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                  />
+                  <figcaption>
+                    <h2>{node.frontmatter.title}</h2>
+                    <span>{node.frontmatter.category}</span>
+                  </figcaption>
+                </Link>
               </figure>
             )
           } else return null

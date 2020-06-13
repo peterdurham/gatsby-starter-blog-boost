@@ -4,19 +4,19 @@ import Image from "gatsby-image"
 
 const Card = ({ frontmatter, slug }) => {
   return (
-    <figure className="card-styles">
+    <figure className="card-small-styles">
       <Link to={slug}>
         <Image
-          className="card-image"
+          className="card-small-image"
           fluid={frontmatter.featuredImage.childImageSharp.fluid}
         />
       </Link>
 
       <figcaption>
-        <div className="card-topic">{frontmatter.category}</div>
         <Link to={slug}>
           <h3>{frontmatter.title}</h3>
         </Link>
+        <span className="card-small-topic">{frontmatter.category}</span>
       </figcaption>
     </figure>
   )

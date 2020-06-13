@@ -116,25 +116,16 @@ body {
   padding-bottom: 25px;
   border-bottom: 1px solid #e6e6e6;
   margin-right: 50px;
-}
-.card-styles {
   display: flex;
   position: relative;
 }
+
 .card-topic {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: #0090ff;
-  color: #fff;
-  z-index: 5;
-  font-weight: 700;
-  font-size: 11px;
-  line-height: 23px;
+  font-size: 12px;
+  line-height: 17px;
+  color: #8f9698;
   text-transform: uppercase;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 2px;
+  font-weight: 700;
 }
 .card-image {
   width: 220px;
@@ -148,7 +139,6 @@ body {
   transition: all 0.7s ease;
 }
 .card-styles figcaption {
-  padding-top: 8px;
 }
 .card-styles figcaption h3 {
   color: #142025;
@@ -159,47 +149,29 @@ body {
   color: #f7102b;
   transition: all 0.4s ease;
 }
-.card-styles figcaption span {
-  color: #8f9698;
-  font-size: 13px;
-  text-transform: uppercase;
-}
 
-/* 
-div>
-        <div className="sidebar">
-          <h2 className="sidebar-header">Mailing List</h2>
-          <div className="sidebar-emails">
-            <h2>Specialized header here</h2>
-            <p>Subscribe to my list for lots of great reasons</p>
-            <form>
-              <input type="text" id="email" />
-              <input type="submit" />
-            </form>
-            <span>Weekly updates</span>
-          </div>
-          <h2 className="sidebar-header">Popular Articles</h2>
-          <div className="sidebar-popular"> */
-
-/* Sidebar Layout */
+/* SIDEBAR STYLES */
 .sidebar {
   width: 360px;
 }
 .sidebar-header {
   background: #000;
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 34px;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
   padding: 0 14px;
-  font-weight: 400;
+  font-weight: 700;
 }
 .sidebar-emails {
   background: rgb(249, 250, 251);
   padding: 36px;
   text-align: center;
+  margin-top: 28px;
   margin-bottom: 44px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 4px;
 }
 .sidebar-emails h2 {
   font-size: 26px;
@@ -221,21 +193,73 @@ div>
   color: #000;
   margin-bottom: 16px;
   width: 100%;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 2px;
 }
 .sidebar-emails input[type="submit"] {
   background: rgb(250, 208, 0);
   color: #4a4a4a;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   border: none;
-  padding: 6px 28px;
+  padding: 8px 28px;
   width: 100%;
   margin-bottom: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.sidebar-emails input[type="submit"]:hover {
+  background: #e1bb00;
 }
 .sidebar-emails span {
-  font-size: 13px;
+  font-size: 11px;
   color: #4d4d4d;
 }
 .sidebar-popular {
 }
+
+/* SIDEBAR CARDS */
+.card-small-styles {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+.card-small-image {
+  width: 104px;
+  height: 58.5px;
+  margin-right: 18px;
+}
+.card-small-image:hover {
+  filter: grayscale(80%);
+  transition: all 0.7s ease;
+}
+.card-small-styles h3 {
+  font-size: 14px;
+  color: #161616;
+}
+.card-small-topic {
+  font-size: 11px;
+  color: #4d4d4d;
+  text-transform: uppercase;
+}
+.card-small-styles figcaption h3:hover {
+  color: #f7102b;
+  transition: all 0.4s ease;
+}
+/* return (
+  <figure className="card-small-styles">
+    <Link to={slug}>
+      <Image
+        className="card-small-image"
+        fluid={frontmatter.featuredImage.childImageSharp.fluid}
+      />
+    </Link>
+
+    <figcaption>
+      <Link to={slug}>
+        <h3>{frontmatter.title}</h3>
+      </Link>
+      <span className="card-small-topic">{frontmatter.category}</span>
+    </figcaption>
+  </figure> */

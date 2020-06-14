@@ -8,6 +8,7 @@ import Card from "../components/card"
 import CardSmall from "../components/cardSmall"
 import Featured from "../components/featured"
 import Search from "../components/search"
+import { FaAngleDoubleRight } from "react-icons/fa"
 
 const IndexPage = props => {
   const data = useStaticQuery(graphql`
@@ -106,7 +107,11 @@ const IndexPage = props => {
             </div>
           </div>
         </div>
-        <Link to="/page-2/">Go to page 2</Link> <br />
+        <Link to="/archive/2" id="archive-link">
+          More Articles
+          <FaAngleDoubleRight className="icon-right" />
+        </Link>{" "}
+        <br />
       </Layout>
     )
   }

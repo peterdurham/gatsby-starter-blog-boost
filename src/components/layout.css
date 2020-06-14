@@ -177,7 +177,7 @@ body {
   margin-right: 25px;
   margin-bottom: 28px;
   background: rgb(251, 251, 251);
-  color: #0090ff;
+  color: rgb(42, 42, 42);
 }
 .card-styles {
   margin-bottom: 30px;
@@ -267,8 +267,8 @@ body {
   border-radius: 2px;
 }
 .sidebar-emails input[type="submit"] {
-  background: rgb(250, 208, 0);
-  color: #4a4a4a;
+  background: #f8d13e;
+  color: #58594c;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
@@ -280,7 +280,7 @@ body {
   cursor: pointer;
 }
 .sidebar-emails input[type="submit"]:hover {
-  background: #e1bb00;
+  background: #f6c920;
 }
 .sidebar-emails span {
   font-size: 11px;
@@ -375,6 +375,7 @@ footer {
   color: white;
   width: 100%;
   min-height: 120px;
+  margin-top: 60px;
 }
 .footerContainer {
   display: flex;
@@ -454,16 +455,68 @@ footer {
   }
 }
 
-/* TAGS PAGE STYLES */
-.tagPageHeader {
+/* PAGE HEADERS STYLES */
+.tagPageHeader,
+.searchHeader,
+#articles-header {
   margin: 42px 0;
   font-size: 32px;
   font-weight: 400;
 }
 
-/* SEARCH STYLES */
-.searchHeader {
-  margin: 42px 0;
-  font-size: 32px;
-  font-weight: 400;
+#archive-link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 30px;
+  width: 620px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+#archive-link:hover {
+  color: #f7102b;
+  transition: all 0.4s ease;
+}
+/* PAGINATION STYLES */
+.paginationLinks {
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.paginationLink {
+  display: flex;
+  align-items: center;
+  width: 84px;
+}
+.paginationLink:hover {
+  color: #f7102b;
+  transition: all 0.4s ease;
+}
+.paginationDetails {
+  color: #000;
+  font-size: 17px;
+  min-width: 154px;
+  max-width: 197px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paginationDisabled {
+  pointer-events: none;
+  color: rgb(200, 200, 200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+}
+.icon-left {
+  margin-right: 8px;
+}
+.icon-right {
+  margin-left: 8px;
+}
+.icon-fix {
+  transform: translateY(1px);
 }

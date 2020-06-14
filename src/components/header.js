@@ -38,6 +38,9 @@ const Header = ({ siteTitle }) => {
                 <Link to={`/${node.slug}`}>{node.name}</Link>
               </li>
             ))}
+            <li>
+              <Link to="/about">About</Link>
+            </li>
           </ul>
           <div id="search-box">
             <form

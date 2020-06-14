@@ -96,6 +96,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  // Create Tag Pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/${_.kebabCase(tag.fieldValue.toLowerCase())}/`,
+      component: tagPage,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
+
   // Create Topics Pages
   topics.forEach(topic => {
     createPage({
@@ -103,17 +114,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: topicPage,
       context: {
         topic: topic.fieldValue,
-      },
-    })
-  })
-
-  // Create Tag Pages
-  tags.forEach(tag => {
-    createPage({
-      path: `/tag/${_.kebabCase(tag.fieldValue.toLowerCase())}/`,
-      component: tagPage,
-      context: {
-        tag: tag.fieldValue,
       },
     })
   })

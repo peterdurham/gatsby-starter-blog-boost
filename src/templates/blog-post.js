@@ -35,7 +35,7 @@ class BlogPostTemplate extends React.Component {
                 <Link
                   className="Tag"
                   key={tag}
-                  to={`/tag/${tag
+                  to={`/${tag
                     .split(" ")
                     .join("-")
                     .split("/")

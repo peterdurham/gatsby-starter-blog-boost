@@ -21,6 +21,7 @@ const Header = ({ siteTitle }) => {
       <div className="container">
         <Link
           to="/"
+          id="site-logo"
           style={{
             textDecoration: `none`,
           }}

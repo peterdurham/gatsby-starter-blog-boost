@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import Image from "gatsby-image"
 
 const Card = ({ frontmatter, slug }) => {
-  console.log(frontmatter, slug)
   return (
     <figure className="card-styles">
       <Link to={slug}>

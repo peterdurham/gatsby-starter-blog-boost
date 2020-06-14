@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
   `)
 
   return (
-    <header id="nav-header">
+    <header id="header">
       <div className="container">
         <Link
           to="/"
@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => {
           {siteTitle}
         </Link>
 
-        <nav>
+        <nav id="nav">
           <ul>
             {data.allTopicsJson.edges.map(({ node }) => (
               <li key={node.slug}>
@@ -51,7 +51,7 @@ const Header = ({ siteTitle }) => {
             >
               <input type="text" id="query" />
             </form>
-            <IoIosSearch id="search-logo" />
+            <IoIosSearch />
           </div>
         </nav>
       </div>

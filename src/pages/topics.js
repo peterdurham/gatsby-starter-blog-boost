@@ -40,7 +40,7 @@ const Topics = () => {
       }
     }
   `)
-  console.log(data)
+
   return (
     <Layout>
       <h1 style={{ marginBottom: "2rem" }}>Topics</h1>

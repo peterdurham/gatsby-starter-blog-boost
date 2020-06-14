@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import Card from "./card"
 import CardSmall from "./cardSmall"
 
@@ -22,18 +21,18 @@ const Search = ({ markdown, query }) => {
       .toLowerCase()
       .includes(query.toLowerCase())
 
-    console.log(titleMatch, topicMatch, tagsMatch, descriptionMatch)
     return titleMatch || topicMatch || tagsMatch || descriptionMatch
   })
 
   return (
     <div>
       <div>
-        <h2 className="searchHeader">
-          Search results for "<strong>{query.replace("%20", " ")}</strong>"
+        <h2 className="page-header">
+          {filteredPosts.length > 0 ? "Search results " : "No results "}
+          for "<strong>{query.replace("%20", " ")}</strong>"
         </h2>
-        <div className="two-column-layout">
-          <div className="cards-layout">
+        <div className="flex-layout">
+          <div className="cards">
             <h2 id="articles-title">Articles</h2>
             {filteredPosts.map(({ node }, index) => {
               return (
@@ -50,7 +49,7 @@ const Search = ({ markdown, query }) => {
             <div className="sidebar-emails">
               <h2>Mailing list here</h2>
               <p>Subscribe to my list for lots of great reasons</p>
-              <form>
+              <form role="search">
                 <input type="text" id="email" />
                 <input type="submit" value="Subscribe" />
               </form>

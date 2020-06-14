@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -44,11 +44,9 @@ const IndexPage = props => {
       }
     }
   `)
-  console.log("LOCATION", props.location.search.slice(3))
   const [queryType, query] = props.location.search.split("=")
 
   if (queryType === "?s" && query.length > 0) {
-    console.log("SEARCH IS ON FOR ", query)
     return (
       <Layout>
         <Search
@@ -61,10 +59,10 @@ const IndexPage = props => {
   } else {
     return (
       <Layout>
-        <SEO title="Home" />
+        <SEO title="Home" slug="/" />
         <Featured markdown={data.allMarkdownRemark} />
-        <div className="two-column-layout">
-          <div className="cards-layout">
+        <div className="flex-layout">
+          <div className="cards">
             <h2 id="articles-title">Articles</h2>
             {data.allMarkdownRemark.edges.map(({ node }, index) => {
               if (index < 3) {
@@ -92,7 +90,7 @@ const IndexPage = props => {
               <span>Weekly updates, unsubscribe at any time</span>
             </div>
             <h2 className="sidebar-header">Popular Articles</h2>
-            <div className="sidebar-popular">
+            <div>
               {data.allMarkdownRemark.edges.map(({ node }, index) => {
                 if (index > 2 && index < 5) {
                   return (

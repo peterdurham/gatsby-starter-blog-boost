@@ -3,18 +3,15 @@ import { Link } from "gatsby"
 import Image from "gatsby-image"
 
 const Featured = ({ markdown }) => {
-  console.log(markdown)
-
   if (!markdown) {
     return <div>...loading</div>
   } else {
     return (
-      <div id="featured-styles">
+      <div id="featured">
         {markdown.edges.map(({ node }, index) => {
-          console.log(node)
           if (index === 0) {
             return (
-              <figure id="featured-main">
+              <figure className="featured-link featured-main">
                 <Link to={node.fields.slug}>
                   <div className="featured-overlay"></div>
                   <Image
@@ -29,7 +26,7 @@ const Featured = ({ markdown }) => {
             )
           } else if (index < 3) {
             return (
-              <figure className="featured-secondary">
+              <figure className="featured-link featured-secondary">
                 <Link to={node.fields.slug}>
                   <div className="featured-overlay"></div>
                   <Image

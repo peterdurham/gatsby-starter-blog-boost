@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +16,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.Tag {
+
+/* Multi-use Components */
+.tag {
   background: #000;
   color: #fff;
   padding: 5px 12px;
@@ -23,36 +26,41 @@ body {
   border: 1px solid #000;
   transition: all 0.4s ease;
 }
-.Tag:hover {
+.tag:hover {
   background: #fff;
   color: #000;
 }
-/* Navbar styles */
-#nav-header {
+.page-header {
+  margin: 42px 0;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+/* Header (Navbar) Section Styles */
+#header {
   width: 100%;
   height: 60px;
-
   box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.03);
 }
-#nav-header .container {
+#header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
-#nav-header nav {
+#nav {
   display: flex;
   align-items: center;
 }
-#nav-header nav ul {
+#nav ul {
   display: flex;
   list-style: none;
 }
-#nav-header nav ul li {
+#nav ul li {
   margin: 12px;
   line-height: 32px;
 }
-#nav-header nav ul li a:hover,
+#nav ul li a:hover,
 #site-logo:hover {
   color: #f7102b;
   transition: all 0.4s ease;
@@ -72,8 +80,7 @@ body {
   font-size: 13px;
   margin-left: 16px;
 }
-
-#search-logo {
+#search-box svg {
   position: absolute;
   right: 6px;
   top: 6px;
@@ -81,8 +88,8 @@ body {
   color: #686868;
 }
 
-/* Featured Section */
-#featured-styles {
+/* Featured Section Styles */
+#featured {
   display: grid;
   grid-template-columns: repeat(3, 320px);
   grid-template-rows: 178px 178px;
@@ -91,50 +98,13 @@ body {
   margin: 50px 0;
 }
 
-#featured-main {
+.featured-main {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
   position: relative;
   overflow: hidden;
 }
-/* #featured-main:hover figcaption,
-.featured-secondary:hover figcaption {
-  color: #f7102b;
-  transition: all 0.4s ease;
-} */
-
-#featured-main a,
-.featured-secondary a {
-  display: block;
-  height: 100%;
-}
-#featured-main img,
-.featured-secondary img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-}
-#featured-main:hover .featured-overlay,
-.featured-secondary:hover .featured-overlay {
-  background: rgba(0, 0, 0, 0.125);
-}
-#featured-main figcaption,
-.featured-secondary figcaption {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  color: #fff;
-  padding: 12px;
-  z-index: 10;
-}
-#featured-main figcaption span,
-.featured-secondary figcaption span {
-  font-style: italic;
-}
-#featured-main figcaption h2 {
+.featured-main figcaption h2 {
   width: 75%;
   font-size: 36px;
 }
@@ -143,6 +113,33 @@ body {
   top: 0;
   left: 0;
   overflow: hidden;
+}
+
+.featured-link a {
+  display: block;
+  height: 100%;
+}
+.featured-link img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+.featured-link figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  padding: 12px;
+  z-index: 10;
+}
+.featured-link figcaption span {
+  font-style: italic;
+}
+.featured-link:hover .featured-overlay {
+  background: rgba(0, 0, 0, 0.125);
 }
 .featured-overlay {
   position: absolute;
@@ -155,17 +152,16 @@ body {
   z-index: 5;
 }
 
-/* COLUMN LAYOUT */
-.two-column-layout {
+/* Cards Layout and Styles */
+.flex-layout {
   display: flex;
 }
 
-/* Cards Layout and Styles */
-.cards-layout {
+.cards {
   width: 715px;
 }
 
-.cards-layout h2 {
+.cards h2 {
   font-size: 14px;
   line-height: 32px;
   font-weight: 700;
@@ -206,8 +202,6 @@ body {
   filter: grayscale(80%);
   transition: all 0.7s ease;
 }
-.card-styles figcaption {
-}
 .card-styles figcaption h3 {
   color: #142025;
   font-size: 24px;
@@ -218,7 +212,7 @@ body {
   transition: all 0.4s ease;
 }
 
-/* SIDEBAR STYLES */
+/* Sidebar Styles */
 .sidebar {
   width: 353px;
   border-left: 1px solid #e6e6e6;
@@ -286,10 +280,8 @@ body {
   font-size: 11px;
   color: #4d4d4d;
 }
-.sidebar-popular {
-}
 
-/* SIDEBAR CARDS */
+/* Small Cards Styles (Sidebar) */
 .card-small-styles {
   display: flex;
   padding: 16px 0;
@@ -317,59 +309,8 @@ body {
   color: #f7102b;
   transition: all 0.4s ease;
 }
-/* return (
-  <figure className="card-small-styles">
-    <Link to={slug}>
-      <Image
-        className="card-small-image"
-        fluid={frontmatter.featuredImage.childImageSharp.fluid}
-      />
-    </Link>
 
-    <figcaption>
-      <Link to={slug}>
-        <h3>{frontmatter.title}</h3>
-      </Link>
-      <span className="card-small-topic">{frontmatter.category}</span>
-    </figcaption>
-  </figure> */
-
-/* BLOG POST TEMPLATE */
-#blogPost {
-  width: 740px;
-  margin: 40px auto;
-}
-#blogPost h1 {
-  font-weight: 400;
-}
-.blogPostDate {
-  font-size: 1.42rem;
-  line-height: 2.2rem;
-  margin-top: 0.4rem;
-}
-.blogPostTags {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-.blogPostImage {
-  height: 38.743rem;
-  margin: 2.5rem 0 3.2rem 0;
-  background-size: cover;
-  background-position: 50% 100%;
-  @media (max-width: 600px) {
-    height: 24rem;
-  }
-}
-.blogPostMarkdown h2,
-.blogPostMarkdown h3 {
-  margin-top: 60px;
-}
-.blogPostMarkdown p {
-  margin-bottom: 20px;
-}
-
-/* FOOTER STYLES */
+/* Footer Styles */
 footer {
   background: black;
   color: white;
@@ -377,33 +318,36 @@ footer {
   min-height: 120px;
   margin-top: 60px;
 }
-.footerContainer {
+#footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 120px;
 }
-.footerLogo {
+.footer-logo {
   font-size: 2.4rem;
   font-weight: 700;
   padding: 3rem 0 1rem 0;
   width: 100%;
   border-bottom: 1px solid grey;
 }
-.footerSocial {
+.footer-social {
   width: 50%;
   font-size: 1.8rem;
   font-weight: 700;
 }
-.footerSocialText {
+.footer-social-text {
   color: rgba(255, 255, 255, 0.5);
   font-size: 21px;
 }
-.footerSocialIcons {
+.footer-social-icons {
   display: flex;
   margin-top: 10px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
 }
-.footerSocialIconContainer {
+.icon-container {
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -413,39 +357,68 @@ footer {
   align-items: center;
   margin-right: 8px;
 }
-.footerSocialIcon {
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
+.icon-container {
+  color: #fff;
+  transition: all 0.3s;
 }
 #tw-icon:hover {
   background-color: #1da1f2;
-  transition: all 0.3s;
 }
 #fb-icon:hover {
   background-color: #3b5999;
-  transition: all 0.3s;
 }
 #yt-icon:hover {
   background-color: #ff0000;
-  transition: all 0.3s;
 }
 #li-icon:hover {
   background-color: #0077b5;
-  transition: all 0.3s;
 }
 
-/* TOPICS PAGE STYLES */
-.topicPageHeader {
+/* Blog Post Styles */
+#article {
+  width: 740px;
+  margin: 40px auto;
+}
+.article-title {
+  font-weight: 400;
+}
+.article-date {
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 7px;
+}
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.article-image {
+  height: 416.25px;
+  margin: 40px 0;
+
+  @media (max-width: 600px) {
+    height: 24rem;
+  }
+}
+.article-markdown h2,
+.article-markdown h3 {
+  margin-top: 40px;
+}
+.article-markdown p {
+  margin-bottom: 30px;
+}
+
+/* Topics Page Styles */
+.topic-page-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4.2rem 0 7.2rem 0;
+  margin: 60px 0;
 }
-.topicPageHeader h1 {
+.topic-page-header h1 {
   margin-right: 24px;
 }
-.topicPageImage {
+.topic-page-image {
   width: 90px;
   height: 90px;
 
@@ -455,15 +428,21 @@ footer {
   }
 }
 
-/* PAGE HEADERS STYLES */
-.tagPageHeader,
-.searchHeader,
-#articles-header {
-  margin: 42px 0;
-  font-size: 32px;
-  font-weight: 400;
+/* About Page Styles */
+#about {
+  min-height: 420px;
 }
-
+#about h3 {
+  margin: 40px 0 20px 0;
+}
+#about p {
+  margin-bottom: 20px;
+}
+.about-icons {
+  font-size: 36px;
+  margin: 20px 0 60px 0;
+}
+/* Archive Pagination Styles */
 #archive-link {
   display: flex;
   align-items: center;
@@ -477,24 +456,23 @@ footer {
   color: #f7102b;
   transition: all 0.4s ease;
 }
-/* PAGINATION STYLES */
-.paginationLinks {
+.pagination-links {
   margin: 0 auto;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.paginationLink {
+.pagination-link {
   display: flex;
   align-items: center;
   width: 84px;
 }
-.paginationLink:hover {
+.pagination-link:hover {
   color: #f7102b;
   transition: all 0.4s ease;
 }
-.paginationDetails {
+.pagination-details {
   color: #000;
   font-size: 17px;
   min-width: 154px;
@@ -503,7 +481,7 @@ footer {
   align-items: center;
   justify-content: center;
 }
-.paginationDisabled {
+.pagination-disabled {
   pointer-events: none;
   color: rgb(200, 200, 200);
   display: flex;

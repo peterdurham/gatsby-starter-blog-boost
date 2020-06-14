@@ -5,7 +5,6 @@ import Image from "gatsby-image"
 import Card from "../components/card"
 import CardSmall from "../components/cardSmall"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 const TopicPageTemplate = ({ pageContext }) => {
   const data = useStaticQuery(graphql`
@@ -62,23 +61,23 @@ const TopicPageTemplate = ({ pageContext }) => {
   const edgesWithTopic = edges.filter(({ node }) => {
     return node.frontmatter.tags.includes(topic)
   })
-  console.log(edgesWithTopic, topic, "EDGES")
+
   const topicInfo = data.allTopicsJson.edges.filter(({ node }) => {
     return node.slug === topic.toLowerCase().replace(" ", "-")
   })[0].node
 
   return (
     <Layout pageType="Topic">
-      <div className="topicPageHeader">
+      <div className="topic-page-header">
         <h1>{topic}</h1>
         <Image
-          className="topicPageImage"
+          className="topic-page-image"
           fluid={topicInfo.image.childImageSharp.fluid}
           alt={topicInfo.name}
         />{" "}
       </div>
-      <div className="two-column-layout">
-        <div className="cards-layout">
+      <div className="flex-layout">
+        <div className="cards">
           <h2 id="articles-title">Articles</h2>
           {edgesWithTopic.map(({ node }, index) => {
             return (
@@ -99,6 +98,7 @@ const TopicPageTemplate = ({ pageContext }) => {
               <input type="text" id="email" />
               <input type="submit" value="Subscribe" />
             </form>
+
             <span>Weekly updates, unsubscribe at any time</span>
           </div>
           <h2 className="sidebar-header">Popular Articles</h2>

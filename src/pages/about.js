@@ -7,21 +7,21 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO title="About Blog Boost Starter" />
-      <div style={{ minHeight: "420px" }}>
-        <h2 style={{ margin: "40px 0 20px 0" }}>About Blog Boost Starter</h2>
-        <p style={{ marginBottom: "20px" }}>
+      <div id="about">
+        <h2>About Blog Boost Starter</h2>
+        <p>
           <strong>Gatsby Starter Blog Boost</strong> is a Netlify CMS powered
           Gatsby Blog with a wide range of features already configured.
         </p>
 
-        <p style={{ marginBottom: "20px" }}>
+        <p>
           This starter is a great way to get blogging using a content manager
           while learning and practicing <strong>JavaScript</strong>,{" "}
           <strong>React</strong>, <strong>Gatsby</strong>, and{" "}
           <strong>GraphQL</strong>,
         </p>
 
-        <div style={{ fontSize: "36px", margin: "20px 0 60px 0" }}>
+        <div className="about-icons">
           <span role="img" aria-label="Laptop.">
             💻
           </span>

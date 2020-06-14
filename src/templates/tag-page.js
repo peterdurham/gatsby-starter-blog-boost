@@ -1,13 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
 
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import Card from "../components/card"
 import CardSmall from "../components/cardSmall"
-import SEO from "../components/seo"
 
-const TagPageTemplate = ({ pageContext }) => {
+function TagPageTemplate({ pageContext }) {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -40,7 +39,7 @@ const TagPageTemplate = ({ pageContext }) => {
       }
     }
   `)
-  console.log(data)
+
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
 
@@ -55,9 +54,9 @@ const TagPageTemplate = ({ pageContext }) => {
   return (
     <Layout pageType="Tag">
       <div>
-        <h2 className="tagPageHeader">{tagHeader}</h2>
-        <div className="two-column-layout">
-          <div className="cards-layout">
+        <h2 className="page-header">{tagHeader}</h2>
+        <div className="flex-layout">
+          <div className="cards">
             <h2 id="articles-title">Articles</h2>
             {edgesWithTag.map(({ node }, index) => {
               return (

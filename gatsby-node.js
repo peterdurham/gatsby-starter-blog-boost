@@ -47,6 +47,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fieldValue
         }
       }
+      allTopicsJson {
+        edges {
+          node {
+            name
+            slug
+          }
+        }
+      }
       tagsGroup: allMarkdownRemark(limit: 2000) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -60,7 +68,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.postsRemark.edges
-  const topics = result.data.topicsGroup.group
+  const topics = result.data.allTopicsJson
   const tags = result.data.tagsGroup.group
 
   posts.forEach((post, index) => {
@@ -97,12 +105,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Create Topics Pages
-  topics.forEach(topic => {
+  topics.edges.forEach(({ node }) => {
     createPage({
-      path: `/${topic.fieldValue.toLowerCase()}/`,
+      path: `/${node.slug}/`,
       component: topicPage,
       context: {
-        topic: topic.fieldValue,
+        topic: node.slug,
       },
     })
   })

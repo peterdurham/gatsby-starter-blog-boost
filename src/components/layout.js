@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -25,26 +26,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* ↓ DELETE THIS BLOCK ↓ */}
-      <div
-        style={{
-          width: "100%",
-          background: "#000",
-          color: "#fff",
-          height: "45px",
-        }}
-      >
-        <div style={{ width: "960px", margin: "0 auto", lineHeight: "45px" }}>
-          Details about the starter here, delete this when ready
-        </div>
-      </div>
-      {/* ↑ DELETE THIS BLOCK ↑ */}
-
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="container">
         <main>{children}</main>
-        <footer>© {new Date().getFullYear()} Site Name</footer>
       </div>
+      <Footer />
     </>
   )
 }

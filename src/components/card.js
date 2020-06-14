@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Image from "gatsby-image"
 
 const Card = ({ frontmatter, slug }) => {
+  console.log(frontmatter, slug)
   return (
     <figure className="card-styles">
       <Link to={slug}>
@@ -13,7 +14,9 @@ const Card = ({ frontmatter, slug }) => {
       </Link>
 
       <figcaption>
-        <div className="card-topic">{frontmatter.category}</div>
+        <Link to={frontmatter.category.toLowerCase().replace(" ", "-")}>
+          <div className="card-topic">{frontmatter.category}</div>
+        </Link>
         <Link to={slug}>
           <h3>{frontmatter.title}</h3>
         </Link>

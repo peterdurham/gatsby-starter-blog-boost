@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout pageType="Post">
-        <div>
+        <div id="blogPost">
           <header>
             <h1>{post.frontmatter.title}</h1>
             <p className="blogPostDate">{post.frontmatter.date}</p>

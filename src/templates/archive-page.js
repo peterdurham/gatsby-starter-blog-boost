@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa"
 
 function ArchivePageTemplate({ data, pageContext }) {
-  const { numPages, numPosts, currentPage } = pageContext
+  const { numPages, currentPage } = pageContext
   const posts = data.allMarkdownRemark.edges
 
   return (
@@ -75,8 +75,12 @@ function ArchivePageTemplate({ data, pageContext }) {
             <h2>Mailing list here</h2>
             <p>Subscribe to my list for lots of great reasons</p>
             <form>
-              <input type="text" id="email" />
-              <input type="submit" value="Subscribe" />
+              <input type="text" id="email" aria-label="email" />
+              <input
+                type="submit"
+                value="Subscribe"
+                aria-label="subscribe"
+              />{" "}
             </form>
             <span>Weekly updates, unsubscribe at any time</span>
           </div>

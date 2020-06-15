@@ -82,7 +82,7 @@ const TopicPageTemplate = ({ pageContext }) => {
           {edgesWithTopic.map(({ node }, index) => {
             return (
               <Card
-                key={node.id}
+                key={node.fields.slug}
                 slug={node.fields.slug}
                 frontmatter={node.frontmatter}
               />
@@ -95,8 +95,12 @@ const TopicPageTemplate = ({ pageContext }) => {
             <h2>Mailing list here</h2>
             <p>Subscribe to my list for lots of great reasons</p>
             <form>
-              <input type="text" id="email" />
-              <input type="submit" value="Subscribe" />
+              <input type="text" id="email" aria-label="email" />
+              <input
+                type="submit"
+                value="Subscribe"
+                aria-label="subscribe"
+              />{" "}
             </form>
 
             <span>Weekly updates, unsubscribe at any time</span>
@@ -107,7 +111,7 @@ const TopicPageTemplate = ({ pageContext }) => {
               if (index > 2 && index < 5) {
                 return (
                   <CardSmall
-                    key={node.id}
+                    key={node.fields.slug}
                     slug={node.fields.slug}
                     frontmatter={node.frontmatter}
                   />

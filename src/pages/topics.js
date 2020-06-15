@@ -43,13 +43,13 @@ const Topics = () => {
 
   return (
     <Layout>
-      <h1 style={{ marginBottom: "2rem" }}>Topics</h1>
-      <div className="trendingTags">
+      <h2 className="page-header">Topics List</h2>
+      <div id="all-topics-list">
         {data.allMarkdownRemark.group.map(topic => (
           <Link
             to={`/${topic.fieldValue.toLowerCase().replace(" ", "-")}/`}
             key={topic.fieldValue}
-            className="Tag"
+            className="tag"
           >
             <span>
               {topic.fieldValue} ({topic.totalCount})

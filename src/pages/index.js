@@ -1,14 +1,13 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { FaAngleDoubleRight } from "react-icons/fa"
 
 import Layout from "../components/layout"
-
 import SEO from "../components/seo"
 import Card from "../components/card"
 import CardSmall from "../components/cardSmall"
 import Featured from "../components/featured"
 import Search from "../components/search"
-import { FaAngleDoubleRight } from "react-icons/fa"
 
 const IndexPage = props => {
   const data = useStaticQuery(graphql`
@@ -84,8 +83,12 @@ const IndexPage = props => {
               <h2>Mailing list here</h2>
               <p>Subscribe to my list for lots of great reasons</p>
               <form>
-                <input type="text" id="email" />
-                <input type="submit" value="Subscribe" />
+                <input type="text" id="email" aria-label="email" />
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  aria-label="subscribe"
+                />{" "}
               </form>
               <span>Weekly updates, unsubscribe at any time</span>
             </div>

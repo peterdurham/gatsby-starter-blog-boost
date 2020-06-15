@@ -1,7 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import { FaAngleDoubleRight } from "react-icons/fa"
 
 import Card from "../components/card"
 import CardSmall from "../components/cardSmall"
@@ -67,6 +68,10 @@ function TagPageTemplate({ pageContext }) {
                 />
               )
             })}
+            <Link to="/topics" id="all-topics-link">
+              <span>See all topics</span>
+              <FaAngleDoubleRight className="icon-right icon-fix" />
+            </Link>
           </div>
           <div className="sidebar">
             <h2 className="sidebar-header">Mailing List</h2>
@@ -74,8 +79,12 @@ function TagPageTemplate({ pageContext }) {
               <h2>Mailing list here</h2>
               <p>Subscribe to my list for lots of great reasons</p>
               <form>
-                <input type="text" id="email" />
-                <input type="submit" value="Subscribe" />
+                <input type="text" id="email" aria-label="email" />
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  aria-label="subscribe"
+                />{" "}
               </form>
               <span>Weekly updates, unsubscribe at any time</span>
             </div>

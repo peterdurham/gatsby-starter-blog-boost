@@ -11,7 +11,10 @@ const Featured = ({ markdown }) => {
         {markdown.edges.map(({ node }, index) => {
           if (index === 0) {
             return (
-              <figure className="featured-link featured-main">
+              <figure
+                key={node.fields.slug}
+                className="featured-link featured-main"
+              >
                 <Link to={node.fields.slug}>
                   <div className="featured-overlay"></div>
                   <Image
@@ -26,7 +29,10 @@ const Featured = ({ markdown }) => {
             )
           } else if (index < 3) {
             return (
-              <figure className="featured-link featured-secondary">
+              <figure
+                key={node.fields.slug}
+                className="featured-link featured-secondary"
+              >
                 <Link to={node.fields.slug}>
                   <div className="featured-overlay"></div>
                   <Image

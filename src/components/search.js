@@ -49,9 +49,13 @@ const Search = ({ markdown, query }) => {
             <div className="sidebar-emails">
               <h2>Mailing list here</h2>
               <p>Subscribe to my list for lots of great reasons</p>
-              <form role="search">
-                <input type="text" id="email" />
-                <input type="submit" value="Subscribe" />
+              <form>
+                <input type="text" id="email" aria-label="email" />
+                <input
+                  type="submit"
+                  value="Subscribe"
+                  aria-label="subscribe"
+                />{" "}
               </form>
               <span>Weekly updates, unsubscribe at any time</span>
             </div>

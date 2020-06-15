@@ -1,62 +1,90 @@
-import React from "react"
+import React, { Component } from "react"
 import { Link, graphql } from "gatsby"
-import _ from "lodash"
 import Layout from "../components/layout"
 import Image from "gatsby-image"
 import SEO from "../components/seo"
+import Card from "../components/card"
 
-function ArticleTemplate({ data, pageContext }) {
-  const post = data.markdownRemark
+class ArticleTemplate extends Component {
+  render() {
+    const { data, pageContext } = this.props
+    const { topic } = pageContext
+    const post = data.markdownRemark
 
-  // const similarPosts = data.allMarkdownRemark.edges
-  //   .filter(item => {
-  //     return (
-  //       item.node.frontmatter.category === topic &&
-  //       item.node.frontmatter.title !== post.frontmatter.title
-  //     )
-  //   })
-  //   .filter((item, index) => {
-  //     return index < 2
-  //   })
+    const similarPosts = data.allMarkdownRemark.edges
+      .filter(item => {
+        return (
+          item.node.frontmatter.category === topic &&
+          item.node.frontmatter.title !== post.frontmatter.title
+        )
+      })
+      .filter((item, index) => {
+        return index < 2
+      })
 
-  return (
-    <Layout pageType="Post">
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-      />
-      <div id="article">
-        <header>
-          <h1 className="article-title">{post.frontmatter.title}</h1>
-          <p className="article-date">{post.frontmatter.date}</p>
-          <div className="article-tags">
-            {post.frontmatter.tags.map(tag => (
-              <Link
-                className="tag"
-                key={tag}
-                to={`/${tag
-                  .split(" ")
-                  .join("-")
-                  .split("/")
-                  .join("-")
-                  .toLowerCase()}`}
-              >
-                {tag}
-              </Link>
-            ))}
-          </div>
-          <Image
-            fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-            className="article-image"
-          ></Image>
-        </header>
-        <div
-          className="article-markdown"
-          dangerouslySetInnerHTML={{ __html: post.html }}
+    return (
+      <Layout pageType="Post">
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
         />
-      </div>
-    </Layout>
-  )
+        <div id="article">
+          <header>
+            <h1 className="article-title">{post.frontmatter.title}</h1>
+            <p className="article-date">{post.frontmatter.date}</p>
+            <div className="article-tags">
+              {post.frontmatter.tags.map(tag => (
+                <Link
+                  className="tag"
+                  key={tag}
+                  to={`/${tag
+                    .split(" ")
+                    .join("-")
+                    .split("/")
+                    .join("-")
+                    .toLowerCase()}`}
+                >
+                  {tag}
+                </Link>
+              ))}
+            </div>
+            <Image
+              fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+              className="article-image"
+            ></Image>
+          </header>
+          <div
+            className="article-markdown"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+
+          <div>
+            {similarPosts.length > 0 && (
+              <h3 id="similar-posts-header">
+                Other {this.props.pageContext.topic} Tutorials
+              </h3>
+            )}
+
+            <section>
+              {similarPosts.map(({ node }) => {
+                return (
+                  <Card
+                    key={node.fields.slug}
+                    title={node.frontmatter.title}
+                    slug={node.fields.slug}
+                    date={node.frontmatter.date}
+                    description={node.frontmatter.description}
+                    excerpt={node.excerpt}
+                    frontmatter={node.frontmatter}
+                  />
+                )
+              })}
+            </section>
+          </div>
+        </div>
+      </Layout>
+    )
+  }
 }
 
 export default ArticleTemplate

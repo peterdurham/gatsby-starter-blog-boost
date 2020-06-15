@@ -6,18 +6,18 @@ Blog Starter for a Gatsby project, built using Netlify CMS.
 
 Features:
 
-- Templates for _Articles_, _Topics_, _Tags_, and _Archive Pages_
-- Utilizes _Gatsby Image_ and _GraphQL_
-- _Netlify CMS_ configured to publish
-- _Mobile_ and _Desktop_ Styling
-- _Email Subscribe_ Module ready to connect
-- _SEO Component_ for Serverside Rendering
-- _Topics_ stored in JSON format
-- _React Icons_ for icon set
+- Templates for **Articles**, **Topics**, **Tags**, and **Archive Pages**
+- Utilizes **Gatsby Image** and **GraphQL**
+- **Netlify CMS** configured to publish
+- **Mobile** and **Desktop** Styling
+- **Email Subscribe** Module ready to connect
+- **SEO Component** for Serverside Rendering
+- **Topics** stored in JSON format
+- **React Icons** for icon set
 
 ## Setup Instructions
 
-First either fork this project or clone and deploy to github
+First either **fork** this project or **clone** and deploy to github
 
 ```bash
 git clone https://github.com/peterdurham/gatsby-starter-blog-boost.git
@@ -41,7 +41,7 @@ This option allows you to login to the CMS with your Github login. Find more det
 
 ## Making Adjustments
 
-I have included all the styles in `.styles.css` and the code is mostly self-contained. Feel free to use this starter to make your own blog with whatever changes are necessary. I tried to keep the blog simple enough while also utilizing all of the best features Gatsby has to offer.
+All the styles are in `.styles.css` and the code is mostly self-contained. Feel free to use this starter to make your own blog with whatever changes are necessary. I tried to keep the blog simple enough while also utilizing all of the best features Gatsby has to offer.
 
 ## Common Issues
 

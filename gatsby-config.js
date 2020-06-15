@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Blog Boost Starter`,
     description: `A Gatsby Netlify CMS powered Blog Starter to boost your development.`,
-    author: `@peterjdurham`,
+    author: `@boostcode`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
+    `gatbsy-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

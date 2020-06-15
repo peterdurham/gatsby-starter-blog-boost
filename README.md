@@ -6,14 +6,14 @@ Blog Starter for a Gatsby project, built using Netlify CMS.
 
 Features:
 
-- Templates for Articles, Topics, Tags, and Archive Pages
-- Utilizes Gatsby Image and GraphQL
-- Netlify CMS configured to publish
-- Mobile and Desktop Styling
-- Email Subscribe Module ready to connect
-- SEO Component for Serverside Rendering
-- Topic Data in JSON format
-- React Icons for Icon set
+- Templates for _Articles_, _Topics_, _Tags_, and _Archive Pages_
+- Utilizes _Gatsby Image_ and _GraphQL_
+- _Netlify CMS_ configured to publish
+- _Mobile_ and _Desktop_ Styling
+- _Email Subscribe_ Module ready to connect
+- _SEO Component_ for Serverside Rendering
+- _Topics_ stored in JSON format
+- _React Icons_ for icon set
 
 ## Setup Instructions
 

@@ -11,7 +11,6 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
-    `gatbsy-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
